@@ -6,10 +6,10 @@ module.exports = {
   ],
   theme: {
     screens: {
-      xs: {"max": '320px'},
-      sm: {"max": "768px"},
-      md: {"max": '1440px'},
-      lg: {"min": "1920px"}
+      xs: {"max": '320px', "min": "0px"},
+      sm: {"max": "768px", "min": "321px"},
+      md: {"max": '1440px', "min": "769px"},
+      lg: {"min": "1920px", "min": "1441px"}
     },
     colors: {
       "primary": "#f9b471",

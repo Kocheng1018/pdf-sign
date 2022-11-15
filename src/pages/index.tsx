@@ -17,24 +17,14 @@ const ActionArea = () => {
   )
 }
 
-const ActionAreaSM = ({device}: {device: string}) => {
-  const btnH = useMemo(() => {
-    if(device === "sm") return "92px"
-    return "41px"
-  },[device])
-
-  const btnW = useMemo(() => {
-    if(device === "sm") return "434px"
-    return "196px"
-  },[device])
-
+const ActionAreaSM = () => {
   return (
     <div className="flex flex-col justify-between h-full items-center py-20">
-      <div>
+      <div className="px-20">
         <img src={Logo} alt="LOGO" />
-        <span className="text-secondary">線上簽署，方便快速。{btnW}</span>
+        <span className="text-secondary md:text-xs xs:text-xs">線上簽署，方便快速。</span>
       </div>
-      <div style={{width: btnW, height: btnH}} >
+      <div className="px-20 w-full h-10" >
         <BiggestButton text="簽署新文件" isDisabled={false} />
       </div>
     </div>
@@ -52,10 +42,12 @@ const HomePage = () => {
 
   return (
     <div className={`${bg()} static`}>
-      { Device === "lg" || Device === "md" ?
-        <ActionArea />:
-        <ActionAreaSM device={Device} />
-    }
+      <div className="sm:hidden xs:hidden">
+        <ActionArea />
+      </div>
+      <div className="lg:hidden md:hidden sm:block h-full">
+        <ActionAreaSM />
+      </div>
     </div>
   )
 }

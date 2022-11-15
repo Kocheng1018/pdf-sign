@@ -1,7 +1,5 @@
 import React from "react"
 interface btnProps {
-  height?: string
-  width?: string
   text: string
   isDisabled: boolean
 }
@@ -14,9 +12,12 @@ const ButtonBase: React.FC<btnProps> = props => {
           bg-light-main text-dark
           tracking-[1em]
           text-center
+          indent-4
           hover:bg-primary hover:text-white hover:cursor-pointer
           disabled:bg-[#fafafa] disabled:text-[#e5e5e3] disabled:hover:cursor-not-allowed
           shadow-[0_4px_4px_rgba(0,0,0,0.25)]
+          xs:text-sm
+          sm:text-sm
         "
         disabled={props.isDisabled}
       >
@@ -27,12 +28,8 @@ const ButtonBase: React.FC<btnProps> = props => {
 }
 
 const BiggestButton: React.FC<btnProps> = (props) => {
-  const w = props.width ? `w-[${props.width}]` : "w-full"
-  const h = props.height ? `h-[${props.height}]` : "h-full"
   return (
-    <div className={`${w} ${h}`}>
-      <ButtonBase text={props.text} isDisabled={props.isDisabled} />
-    </div>
+    <ButtonBase text={props.text} isDisabled={props.isDisabled} />
   )
 }
 

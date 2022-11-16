@@ -1,7 +1,6 @@
 import DeviceType from "../utils/DeviceType"
 import Logo from "../assets/covers/LOGO.png"
 import { BiggestButton } from "../components/buttons"
-import { useMemo } from "react"
  
 const ActionArea = () => {
   return (

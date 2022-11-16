@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 interface btnProps {
-  text: string
-  isDisabled: boolean
+  text: string;
+  isDisabled: boolean;
 }
-const ButtonBase: React.FC<btnProps> = props => {
+const ButtonBase: React.FC<btnProps> = (props) => {
   return (
     <>
       <button
@@ -24,15 +24,11 @@ const ButtonBase: React.FC<btnProps> = props => {
         {props.text}
       </button>
     </>
-  )
-}
+  );
+};
 
 const BiggestButton: React.FC<btnProps> = (props) => {
-  return (
-    <ButtonBase text={props.text} isDisabled={props.isDisabled} />
-  )
-}
+  return <ButtonBase text={props.text} isDisabled={props.isDisabled} />;
+};
 
-export {
-  BiggestButton
-}
+export { BiggestButton };

@@ -2,8 +2,10 @@ import React from "react";
 interface btnProps {
   text: string;
   isDisabled: boolean;
+  action: any;
 }
-const ButtonBase: React.FC<btnProps> = (props) => {
+
+const BiggestButton: React.FC<btnProps> = (props) => {
   return (
     <>
       <button
@@ -20,6 +22,7 @@ const ButtonBase: React.FC<btnProps> = (props) => {
           sm:text-sm
         "
         disabled={props.isDisabled}
+        onClick={() => props.action()}
       >
         {props.text}
       </button>
@@ -27,8 +30,79 @@ const ButtonBase: React.FC<btnProps> = (props) => {
   );
 };
 
-const BiggestButton: React.FC<btnProps> = (props) => {
-  return <ButtonBase text={props.text} isDisabled={props.isDisabled} />;
+const TextButton: React.FC<btnProps> = (props) => {
+  return (
+    <>
+      <button
+        className="
+          text-base
+          text-center
+          w-full h-full
+          text-secondary
+          hover:text-primary
+          active:text-primary
+          focus:text-primary
+          disabled:text-[#e2e1dd]
+        "
+        disabled={props.isDisabled}
+        onClick={() => props.action}
+      >
+        {props.text}
+      </button>
+    </>
+  );
 };
 
-export { BiggestButton };
+const ConfirmButton: React.FC<btnProps> = (props) => {
+  return (
+    <>
+      <button
+        className="
+          text-xl
+          sm:text-base
+          xs:text-xs
+          text-center
+          w-full h-full
+          text-white
+          px-11 py-4
+          sm:px-7 sm:py-2
+          xs:px-3 xs:py-1
+          bg-secondary
+          hover:bg-primary
+          disabled:bg-mid-gray
+          rounded-full
+          shadow-[0_4px_4px_#eeede8]
+        "
+        disabled={props.isDisabled}
+        onClick={() => props.action}
+      >
+        {props.text}
+      </button>
+    </>
+  );
+};
+
+const CancelButton: React.FC<btnProps> = (props) => {
+  return (
+    <>
+      <button
+        className="
+          text-base
+          text-center
+          w-full h-full
+          bg-white
+          text-secondary
+          px-11 py-4
+          hover:text-primary
+          rounded-full
+          shadow-[0_4px_4px_#eeede8]
+        "
+        disabled={props.isDisabled}
+        onClick={() => props.action}
+      >
+        {props.text}
+      </button>
+    </>
+  );
+};
+export { BiggestButton, TextButton, ConfirmButton, CancelButton };

@@ -1,19 +1,27 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouteObject, useRoutes } from "react-router-dom";
 import "./App.css";
-import HomePage from "@/pages/index";
+import NavBar from "./layout/navBar";
+import HomePage from "./pages/index";
+import SignNewFile from "./pages/signNewFile";
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomePage />,
-  },
-]);
+function App(): JSX.Element {
+  const router: RouteObject[] = [
+    {
+      index: true,
+      element: <HomePage />,
+    },
+    {
+      path: "/signnewfile",
+      element: <SignNewFile />,
+    },
+  ];
 
-function App() {
+  const el = useRoutes(router);
+
   return (
-    <div id="App">
-      <RouterProvider router={router} />
-      <button className="btn">Button</button>
+    <div id="App" className="h-full w-full grid grid-rows-[60px_1fr]">
+      <NavBar />
+      {el}
     </div>
   );
 }

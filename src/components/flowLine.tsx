@@ -11,7 +11,7 @@ const Dot: React.FC<dotStatus> = (props) => {
   return (
     <div className="flex flex-col gap-1">
       <div className="relative rounded-full w-[22px] h-[22px] bg-white flex items-center justify-center">
-        <span className="absolute tracking-wide top-[-28px] w-24 text-base xs:text-xs">
+        <span className="absolute tracking-wide top-[-26px] xs:top-[-20px] w-24 text-base xs:text-xs text-dark-gray">
           {props.label}
         </span>
         <div className="rounded-full w-4 h-4 bg-primary"></div>

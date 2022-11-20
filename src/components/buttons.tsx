@@ -64,9 +64,9 @@ const ConfirmButton: React.FC<btnProps> = (props) => {
           text-center
           w-full h-full
           text-white
-          px-11 py-4
-          sm:px-7 sm:py-2
-          xs:px-3 xs:py-1
+          px-11
+          sm:px-7
+          xs:px-3
           bg-secondary
           hover:bg-primary
           disabled:bg-mid-gray
@@ -87,12 +87,16 @@ const CancelButton: React.FC<btnProps> = (props) => {
     <>
       <button
         className="
-          text-base
+          text-xl
+          sm:text-base
+          xs:text-xs
           text-center
           w-full h-full
           bg-white
           text-secondary
-          px-11 py-4
+          px-11
+          sm:px-7
+          xs:px-3
           hover:text-primary
           rounded-full
           shadow-[0_4px_4px_#eeede8]

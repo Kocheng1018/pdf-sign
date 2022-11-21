@@ -11,10 +11,10 @@ const Footer: React.FC = () => {
         items-center
         xs:flex-row
         max-w-[1408px]
-        px-4 py-5
+        px-4
         h-[100px]
         sm:h-[70px]
-        sm:px-4 sm:py-2
+        sm:px-4
         xs:h-[115px]
         m-auto
         xs:grid

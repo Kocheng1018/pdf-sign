@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^1.2.4",
+    "fabric": "^5.2.4",
     "jotai": "^1.10.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

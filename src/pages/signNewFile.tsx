@@ -5,7 +5,7 @@ import SignFile from "../components/signNewFile/signFile";
 
 const SignNewFile: React.FC = () => {
   const [selectFile, setSelectFile] = useState<File | null>(null);
-  const [step, setStep] = useState<Number>(0); // 上傳0 簽署1 下載2
+  const [step, setStep] = useState<Number>(0); // 上傳0 簽署1
 
   const getNewFile = (file: File) => {
     setSelectFile(file)
@@ -23,12 +23,6 @@ const SignNewFile: React.FC = () => {
       {step === 1 && (
         <div className="bg-mid-gray  ">
           <SignFile file={selectFile} />
-        </div>
-      )}
-
-      {step === 2 && (
-        <div className="bg-mid-gray py-[30px] sm:p-[15px] xs:p-[10px] ">
-          <FileChoose openFile={getNewFile} />
         </div>
       )}
 

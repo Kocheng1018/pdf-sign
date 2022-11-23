@@ -1,4 +1,4 @@
-import Logo from "../assets/covers/LOGO.png";
+import Logo from "@/assets/covers/LOGO.png";
 import { TextButton } from "../components/buttons";
 import { useNavigate } from "react-router-dom";
 

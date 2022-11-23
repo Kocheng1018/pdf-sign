@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PdfLogo from "../../assets/covers/logo-pdf.png";
+import PdfLogo from "@/assets/covers/logo-pdf.png";
 import { FileUploader } from "react-drag-drop-files";
 import Footer from "@/components/signNewFile/footer";
 

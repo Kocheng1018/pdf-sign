@@ -1,5 +1,5 @@
 import DeviceType from "../utils/DeviceType";
-import Logo from "../assets/covers/LOGO.png";
+import Logo from "@/assets/covers/LOGO.png";
 import { BiggestButton } from "../components/buttons";
 import { useNavigate } from "react-router-dom";
 

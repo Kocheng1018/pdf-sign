@@ -25,8 +25,8 @@ module.exports = withMT({
     },
     extend: {
       backgroundImage: {
-        "cover_lg" : "url('./src/assets/covers/cover-lg.png')",
-        "cover_sm" : "url('./src/assets/covers/cover-sm.png')"
+        "cover_lg" : "url('@/assets/covers/cover-lg.png')",
+        "cover_sm" : "url('@/assets/covers/cover-sm.png')"
       }
     },
   },

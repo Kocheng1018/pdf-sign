@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PdfLogo from "../../assets/covers/logo-pdf.png";
 import { FileUploader } from "react-drag-drop-files";
+import Footer from "@/components/signNewFile/footer";
 
 const FileChoose: React.FC<any> = ({ openFile }) => {
   const [selectType, setSelectType] = useState("upload"); // upload choose
@@ -10,8 +11,8 @@ const FileChoose: React.FC<any> = ({ openFile }) => {
   };
 
   return (
-    <>
-      <div className="flex flex-col rounded-[35px] h-full mx-auto bg-white max-w-[1440px] md:max-w-[1405px]">
+    <div className="h-full w-full grid grid-rows-[1fr_auto] bg-mid-gray gap-2 ">
+      <div className="flex flex-col rounded-[35px] m-2 w-full mx-auto bg-white max-w-[1440px] md:max-w-[1405px]">
         <div className="cursor-pointer h-[60px] xs:h-[30px] bg-light-main flex justify-center items-center rounded-t-[35px]">
           <div
             style={selectType === "upload" ? isSelectStyle : {}}
@@ -61,7 +62,15 @@ const FileChoose: React.FC<any> = ({ openFile }) => {
           )}
         </section>
       </div>
-    </>
+      <Footer
+        step={1}
+        conformDisabled={selectType === "upload"}
+        conformAction={() => {}}
+        cancelAction={() => {}}
+        conformText="選擇文件"
+        cancelText="取消"
+      />
+      </div>
   );
 };
 export default FileChoose;

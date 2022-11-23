@@ -7,11 +7,13 @@ import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+  <>
+  {/* <React.StrictMode> */}
     <ThemeProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
+  </>
 );

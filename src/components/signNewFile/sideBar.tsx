@@ -1,0 +1,86 @@
+import React, { useState } from "react";
+import SignDialog from "@/components/signNewFile/signDialog";
+import IconPen from "@/assets/icons/pen.png";
+import IconImage from "@/assets/icons/impge.png";
+import IconDel from "@/assets/icons/del.png";
+
+const SideBar: React.FC<any> = ({ file, selectSign }) => {
+  const [signDialog, setSignDialog] = useState<boolean>(false);
+  const [src, setSrc] = useState<any>([]);
+
+  const addSign = () => {
+    setSignDialog(true);
+  };
+
+  const handlerClose = () => setSignDialog((e) => !e);
+
+  /** 轉圖片 */
+  const addSignImg = (image: any) => {
+    setSrc((arr: []) => [...arr, image]);
+    handlerClose();
+  };
+
+  const cooseSign = (item: any) => {
+    selectSign(item);
+  };
+
+  const delSign = (idx: number) => {
+    const _arr = [...src];
+    _arr.splice(idx, 1);
+    setSrc(_arr);
+  };
+
+  return (
+    <>
+      <div className="w-[400px] md:flex lg:flex flex-col bg-white hidden pt-[25px]">
+        <div className="px-9 mb-6">
+          <p className="text-left font-bold">文件名稱</p>
+          <p className="text-left">{file.name}</p>
+        </div>
+        <span className="border-mid-gray border-solid border-t"></span>
+        <div className=" mt-6 px-9 tracking-normal flex flex-col gap-4">
+          <p className="text-left font-bold">我的簽名 (直接拖曳使用)</p>
+          {src.map((item: any, idx: number) => {
+            return (
+              <div
+                key={idx}
+                className="grid grid-cols-[1fr_auto] items-center px-1 border border-dashed"
+              >
+                <img
+                  src={item}
+                  className="h-[60px] m-auto"
+                  onClick={() => cooseSign(item)}
+                />
+                <img
+                  src={IconDel}
+                  className="hover:cursor-pointer"
+                  width="24"
+                  height="24"
+                  onClick={() => delSign(idx)}
+                />
+              </div>
+            );
+          })}
+          <div
+            className="flex items-center justify-center py-[18px] border border-dashed hover:cursor-pointer"
+            onClick={addSign}
+          >
+            創建簽名
+            <img src={IconPen} width="24" height="24" />
+          </div>
+          <div className="flex items-center justify-center py-[18px] border border-dashed hover:cursor-pointer">
+            上傳圖片
+            <img src={IconImage} width="24" height="24" />
+          </div>
+        </div>
+      </div>
+      <SignDialog
+        signDialog={signDialog}
+        handlerClose={handlerClose}
+        addSignImg={(e: any) => addSignImg(e)}
+      />
+    </>
+  );
+};
+
+export default SideBar;

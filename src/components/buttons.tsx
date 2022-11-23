@@ -45,7 +45,7 @@ const TextButton: React.FC<btnProps> = (props) => {
           disabled:text-[#e2e1dd]
         "
         disabled={props.isDisabled}
-        onClick={() => props.action}
+        onClick={() => props.action()}
       >
         {props.text}
       </button>
@@ -74,7 +74,7 @@ const ConfirmButton: React.FC<btnProps> = (props) => {
           shadow-[0_4px_4px_#eeede8]
         "
         disabled={props.isDisabled}
-        onClick={() => props.action}
+        onClick={() => props.action()}
       >
         {props.text}
       </button>
@@ -102,7 +102,7 @@ const CancelButton: React.FC<btnProps> = (props) => {
           shadow-[0_4px_4px_#eeede8]
         "
         disabled={props.isDisabled}
-        onClick={() => props.action}
+        onClick={() => props.action()}
       >
         {props.text}
       </button>

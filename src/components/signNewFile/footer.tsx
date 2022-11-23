@@ -1,7 +1,7 @@
 import { ConfirmButton, CancelButton } from "../../components/buttons";
 import FlowLine from "../../components/flowLine";
 
-const Footer: React.FC = () => {
+const Footer: React.FC<any> = ({conformDisabled, step, conformAction, cancelAction, conformText, cancelText }) => {
   return (
     <div className="bg-light-main w-full">
       <div
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
       "
       >
         <section>
-          <FlowLine />
+          <FlowLine step={step} />
         </section>
         <section
           className="
@@ -40,8 +40,16 @@ const Footer: React.FC = () => {
           h-14
           xs:h-10"
         >
-          <CancelButton text="取消" isDisabled={false} action={() => {}} />
-          <ConfirmButton text="開啟文件" isDisabled={false} action={() => {}} />
+          <CancelButton
+            text={cancelText}
+            isDisabled={false}
+            action={cancelAction}
+          />
+          <ConfirmButton
+            text={conformText}
+            isDisabled={conformDisabled}
+            action={conformAction}
+          />
         </section>
       </div>
     </div>

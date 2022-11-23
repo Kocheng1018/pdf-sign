@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FileChoose from "../components/signNewFile/fileChoose";
 import SignFile from "../components/signNewFile/signFile";
-import { pdfToImage, printPDF } from "@/components/fn.ts";
+import { pdfToImage, printPDF } from "@/components/fn";
 
 const SignNewFile: React.FC = () => {
   const [selectFile, setSelectFile] = useState<File | null>(null);

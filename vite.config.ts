@@ -8,5 +8,5 @@ export default defineConfig({
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },
-  base: "/",
+  base: "/pdf-sign/",
 });

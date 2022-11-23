@@ -1,13 +1,17 @@
 import { RouteObject, useRoutes } from "react-router-dom";
 import "./App.css";
 import NavBar from "./layout/navBar";
-import HomePage from "./pages/index";
-import SignNewFile from "./pages/signNewFile";
+import HomePage from "@/pages/index";
+import SignNewFile from "@/pages/signNewFile";
 
 function App(): JSX.Element {
   const router: RouteObject[] = [
     {
       index: true,
+      element: <HomePage />,
+    },
+    {
+      path: "/home",
       element: <HomePage />,
     },
     {

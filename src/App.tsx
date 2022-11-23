@@ -39,7 +39,7 @@ function App(): JSX.Element {
     </div>
   );
   return (
-    <Router>
+    <Router basename="/pdf-sign/">
       <Routes>
         <Route element={defaultLayout}>
           <Route path="/" element={<HomePage />} />

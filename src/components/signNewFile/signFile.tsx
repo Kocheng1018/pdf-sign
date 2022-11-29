@@ -6,7 +6,7 @@ import { fabric } from "fabric";
 import { signAtom } from "../../data";
 import { jsPDF } from "jspdf";
 
-const SignFile: React.FC<any> = ({ file, resetFlow }) => {
+const SignFile: React.FC<any> = ({ file, fileName, resetFlow }) => {
   const [signData, setSignData] = useAtom(signAtom);
   const pdfScreenHeight = `${window.innerHeight - 160}px`;
   const selectSign = (item: any) => {
@@ -58,7 +58,7 @@ const SignFile: React.FC<any> = ({ file, resetFlow }) => {
     pdf.addImage(image, "png", 0, 0, width, height);
 
     // 將檔案取名並下載
-    pdf.save("download.pdf");
+    pdf.save(`${fileName}`);
   };
 
   const step = useMemo(() => (signData ? 3 : 2), [signData]);
@@ -67,7 +67,7 @@ const SignFile: React.FC<any> = ({ file, resetFlow }) => {
     <div className="h-full w-full grid grid-rows-[1fr_auto]">
       <div className="bg-mid-gray  ">
         <div className="h-full grid md:grid-cols-[400px_1fr] lg:grid-cols-[400px_1fr] grid-cols-1 grid-rows-1 tracking-normal">
-          <SideBar file={file} selectSign={(e: any) => selectSign(e)} />
+          <SideBar fileName={fileName} file={file} selectSign={(e: any) => selectSign(e)} />
           <div
             className="flex justify-center overflow-y-auto py-9 text-center"
             style={{ height: pdfScreenHeight }}

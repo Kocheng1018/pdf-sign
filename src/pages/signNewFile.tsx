@@ -5,9 +5,11 @@ import { pdfToImage, printPDF } from "@/components/fn";
 
 const SignNewFile: React.FC = () => {
   const [selectFile, setSelectFile] = useState<File | null>(null);
+  const [fileName, setFileName] = useState<String | "">("");
   const [step, setStep] = useState<Number>(0); // 上傳0 簽署1
 
   const getNewFile = async (file: File) => {
+    setFileName(file.name)
     const pdfImage = await pdfToImg(file);
     setSelectFile(pdfImage);
     setStep(1);
@@ -27,7 +29,7 @@ const SignNewFile: React.FC = () => {
       {step === 0 && <FileChoose openFile={getNewFile} />}
 
       {step === 1 && (
-        <SignFile file={selectFile} resetFlow={resetFlow}></SignFile>
+        <SignFile file={selectFile} fileName={fileName} resetFlow={resetFlow}></SignFile>
       )}
     </>
   );

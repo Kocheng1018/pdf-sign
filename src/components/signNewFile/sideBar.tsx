@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SignDialog from "@/components/signNewFile/signDialog";
 import IconPen from "@/assets/icons/pen.png";
 import IconImage from "@/assets/icons/impge.png";
 import IconDel from "@/assets/icons/del.png";
 
-const SideBar: React.FC<any> = ({ file, selectSign }) => {
+const SideBar: React.FC<any> = ({ file, fileName, selectSign }) => {
   const [signDialog, setSignDialog] = useState<boolean>(false);
   const [src, setSrc] = useState<any>([]);
 
@@ -35,7 +35,7 @@ const SideBar: React.FC<any> = ({ file, selectSign }) => {
       <div className="w-[400px] md:flex lg:flex flex-col bg-white hidden pt-[25px]">
         <div className="px-9 mb-6">
           <p className="text-left font-bold">文件名稱</p>
-          <p className="text-left">{file.name}</p>
+          <p className="text-left">{fileName}</p>
         </div>
         <span className="border-mid-gray border-solid border-t"></span>
         <div className=" mt-6 px-9 tracking-normal flex flex-col gap-4">
@@ -67,10 +67,6 @@ const SideBar: React.FC<any> = ({ file, selectSign }) => {
           >
             創建簽名
             <img src={IconPen} width="24" height="24" />
-          </div>
-          <div className="flex items-center justify-center py-[18px] border border-dashed hover:cursor-pointer">
-            上傳圖片
-            <img src={IconImage} width="24" height="24" />
           </div>
         </div>
       </div>

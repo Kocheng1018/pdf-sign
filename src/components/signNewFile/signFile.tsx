@@ -65,8 +65,8 @@ const SignFile: React.FC<any> = ({ file, fileName, resetFlow }) => {
 
   return (
     <div className="h-full w-full grid grid-rows-[1fr_auto]">
-      <div className="bg-mid-gray  ">
-        <div className="h-full grid md:grid-cols-[400px_1fr] lg:grid-cols-[400px_1fr] grid-cols-1 grid-rows-1 tracking-normal">
+      <div className="bg-mid-gray">
+        <div className="h-full grid grid-cols-[400px_1fr] tracking-normal">
           <SideBar fileName={fileName} file={file} selectSign={(e: any) => selectSign(e)} />
           <div
             className="flex justify-center overflow-y-auto py-9 text-center"

@@ -32,7 +32,7 @@ const SideBar: React.FC<any> = ({ file, fileName, selectSign }) => {
 
   return (
     <>
-      <div className="w-[400px] md:flex lg:flex flex-col bg-white hidden pt-[25px]">
+      <div className="w-[400px] md:flex lg:flex flex-col bg-white pt-[25px]">
         <div className="px-9 mb-6">
           <p className="text-left font-bold">文件名稱</p>
           <p className="text-left">{fileName}</p>

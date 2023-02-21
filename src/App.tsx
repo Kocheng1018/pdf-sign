@@ -8,7 +8,7 @@ import SignNewFile from "@/pages/signNewFile";
 function App(): JSX.Element {
 
   const defaultLayout = (
-    <div id="App" className="h-full w-full grid grid-rows-[60px_1fr]">
+    <div id="App" className="h-full w-full min-w-[800px] grid grid-rows-[60px_1fr]">
       <NavBar />
       <Outlet></Outlet>
     </div>
